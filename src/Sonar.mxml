@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute">
-	
+	<mx:Script>
+		<![CDATA[
+			import Sonar.XMLLoader;
+			private var loader:XMLLoader = new XMLLoader();
+			
+			private function writeOut(value:String):void
+			{
+				textOut.text = value;
+			}
+		]]>
+	</mx:Script>
+	<mx:Button x="10" y="10" label="read" click="writeOut(loader.xml.children().toString());"/>
+	<mx:TextArea x="83" y="11" width="795" height="476" editable="false" wordWrap="true" id="textOut"/>
 </mx:Application>
